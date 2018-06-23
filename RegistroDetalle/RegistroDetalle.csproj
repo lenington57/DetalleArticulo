@@ -51,11 +51,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ArticulosBLL.cs" />
+    <Compile Include="BLL\CotizacionesBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\PersonasBLL.cs" />
     <Compile Include="BLL\Repositorio.cs" />
+    <Compile Include="BLL\RepositorioCotizaciones.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulos.cs" />
+    <Compile Include="Entidades\Cotizaciones.cs" />
+    <Compile Include="Entidades\DetalleCotizaciones.cs" />
     <Compile Include="Entidades\Personas.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>

@@ -13,6 +13,8 @@ namespace RegistroDetalle.DAL
 
         public DbSet<Personas> Personas { get; set; }
 
+        public DbSet<Cotizaciones> Cotizaciones { get; set; }
+
 
         public Contexto() : base("ConStr")
         {

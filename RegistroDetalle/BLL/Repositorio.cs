@@ -19,7 +19,7 @@ namespace RegistroDetalle.Entidades
         }
 
         //Programando el metodo buscar heredado de la interfaz IRepository<T>.
-        public T Buscar(int id)
+        public virtual T Buscar(int id)
         {
             T entity;
             try
@@ -92,7 +92,7 @@ namespace RegistroDetalle.Entidades
         }
 
         //Programando el metodo Modificar heredado de la interfaz IRepository<T>.
-        public bool Modificar(T entity)
+        public virtual bool Modificar(T entity)
         {
             bool paso = false;
             try
