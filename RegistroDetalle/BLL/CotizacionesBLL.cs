@@ -29,6 +29,10 @@ namespace RegistroDetalle.BLL
             {
                 if (contexto.Cotizaciones.Add(cotizaciones) != null)
                 {
+                    foreach (var item in cotizaciones.Detalle)
+                    {
+                        contexto.Articulos.Find(item.ArticulosId).CantCotizada += item.CantidadCotizada;
+                    }
                     contexto.SaveChanges();//Guardar los cambios.
                     paso = true;
                 }
@@ -53,6 +57,33 @@ namespace RegistroDetalle.BLL
             Contexto contexto = new Contexto();
             try
             {
+                var CantCotAnt = CotizacionesBLL.Buscar(cotizaciones.CotizacionId);
+
+                foreach (var item in CantCotAnt.Detalle)//recorrer el detalle anterior
+                {
+                    //restar todas las visitas
+                    contexto.Articulos.Find(item.ArticulosId).CantCotizada -= item.CantidadCotizada;
+
+                    //determinar si el item no esta en el detalle actual
+                    if (!cotizaciones.Detalle.ToList().Exists(v => v.Id == item.Id))
+                    {
+                        contexto.Articulos.Find(item.ArticulosId).CantCotizada -= item.CantidadCotizada;
+                        item.Articulos = null; //quitar la ciudad para que EF no intente hacerle nada
+                        contexto.Entry(item).State = EntityState.Deleted;
+                    }
+                }
+
+                //recorrer el detalle
+                foreach (var item in cotizaciones.Detalle)
+                {
+                    //Sumar todas las visitas
+                    contexto.Articulos.Find(item.ArticulosId).CantCotizada += item.CantidadCotizada;
+
+                    //Muy importante indicar que pasara con la entidad del detalle
+                    var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
+                    contexto.Entry(item).State = estado;
+                }
+
                 contexto.Entry(cotizaciones).State = EntityState.Modified;
                 if (contexto.SaveChanges() > 0)
                 {
@@ -81,6 +112,12 @@ namespace RegistroDetalle.BLL
             {
                 Cotizaciones cotizaciones = contexto.Cotizaciones.Find(id);
 
+                foreach (var item in cotizaciones.Detalle)
+                {
+                    var articulos = contexto.Articulos.Find(item.ArticulosId);
+                    articulos.CantCotizada -= item.CantidadCotizada;
+
+                }
                 contexto.Cotizaciones.Remove(cotizaciones);
 
                 if (contexto.SaveChanges() > 0)
@@ -109,6 +146,20 @@ namespace RegistroDetalle.BLL
             try
             {
                 cotizaciones = contexto.Cotizaciones.Find(id);
+
+                if (cotizaciones != null)
+                {
+                    //Cargar la lista en este punto porque
+                    //luego de hacer Dispose() el Contexto 
+                    //no sera posible leer la lista
+                    cotizaciones.Detalle.Count();
+                    //Cargar las Descripcion
+                    foreach (var item in cotizaciones.Detalle)
+                    {
+                        //forzando la Descripcion a cargarse
+                        string s = item.Articulos.Descripcion;
+                    }
+                }
                 contexto.Dispose();//Siempre hay que cerrar la conexión.
             }
             catch (Exception)
