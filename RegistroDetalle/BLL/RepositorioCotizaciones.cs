@@ -25,8 +25,12 @@ namespace RegistroDetalle.BLL
 
                 cotizaciones.Detalle.Count();
 
-                foreach (var item in cotizaciones.Detalle)//Cargar los nombres de las ciudades    
-                { string s = item.Personas.Nombres; } //forzando la ciudad a cargarse
+                foreach (var item in cotizaciones.Detalle) 
+                {
+                    string s = item.Personas.Nombres;
+                    string ss = item.Articulos.Descripcion;
+                }
+                _contexto.Dispose();
             }
             catch (Exception)
             {
@@ -55,6 +59,7 @@ namespace RegistroDetalle.BLL
 
                 if (_contexto.SaveChanges() > 0)
                     paso = true;
+                _contexto.Dispose();
             }
             catch (Exception)
             {

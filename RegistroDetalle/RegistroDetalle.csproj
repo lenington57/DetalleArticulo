@@ -75,6 +75,12 @@
     <Compile Include="UI\Registros\RegistrarArticulos.Designer.cs">
       <DependentUpon>RegistrarArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\RegistrarCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrarCotizacion.Designer.cs">
+      <DependentUpon>RegistrarCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RegistrarPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Registros\RegistrarArticulos.resx">
       <DependentUpon>RegistrarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistrarCotizacion.resx">
+      <DependentUpon>RegistrarCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistrarPersonas.resx">
       <DependentUpon>RegistrarPersonas.cs</DependentUpon>
