@@ -19,16 +19,35 @@ namespace RegistroDetalle
         private void registrarArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroDetalle.UI.Registros.RegistrarArticulos registrarArticulos = new UI.Registros.RegistrarArticulos();
+            registrarArticulos.MdiParent = this;
             registrarArticulos.Show();
         }
 
         private void registrarPersonasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroDetalle.UI.Registros.RegistrarPersonas registrarPersonas = new UI.Registros.RegistrarPersonas();
+            registrarPersonas.MdiParent = this;
             registrarPersonas.Show();
         }
 
         private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrarCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroDetalle.UI.Registros.RegistrarCotizacion registrarCotizacion = new UI.Registros.RegistrarCotizacion();
+            registrarCotizacion.MdiParent = this;
+            registrarCotizacion.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            registrarPersonasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void RegistrarPersonasToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

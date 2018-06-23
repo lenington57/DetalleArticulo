@@ -11,11 +11,17 @@ namespace RegistroDetalle.Entidades
     {
         [Key]
         public int Id { get; set; }
+
         public int CotizacionId { get; set; }
+
         public int PersonaId { get; set; }
+
         public int ArticulosId { get; set; }
-        public float Cantidad { get; set; }
+
+        public float CantidadCotizada { get; set; }
+
         public float Precio { get; set; }
+
         public float Importe { get; set; }
 
         [ForeignKey("PersonaId")]
@@ -31,13 +37,13 @@ namespace RegistroDetalle.Entidades
             this.CotizacionId = 0;
         }
 
-        public DetalleCotizaciones(int id, int cotizacioId, int personaId, int articulosId, float cantidad, float precio, float importe)
+        public DetalleCotizaciones(int id, int cotizacionId, int personaId, int articulosId, float cantidadCotizada, float precio, float importe)
         {
             Id = id;
-            CotizacionId = cotizacioId;
+            CotizacionId = cotizacionId;
             PersonaId = personaId;
             ArticulosId = articulosId;
-            Cantidad = cantidad;
+            CantidadCotizada = cantidadCotizada;
             Precio = precio;
             Importe = importe;
         }

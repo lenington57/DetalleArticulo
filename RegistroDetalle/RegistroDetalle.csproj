@@ -126,11 +126,13 @@
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Scripts\SQLQueryDetalle.sql" />
     <None Include="Resources\Delete_16px.png" />
     <None Include="Resources\Save_16px.png" />
     <None Include="Resources\Edit Property_16px.png" />
     <None Include="Resources\Search_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Scripts\Scripts.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

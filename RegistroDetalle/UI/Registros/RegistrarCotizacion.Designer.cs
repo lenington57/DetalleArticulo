@@ -28,54 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.CotizacionIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.PersonaComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ArticuloComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CantidadCotizadaTextBox = new System.Windows.Forms.TextBox();
+            this.PrecioTextBox = new System.Windows.Forms.TextBox();
+            this.ImporteTextBox = new System.Windows.Forms.TextBox();
+            this.DetalleCotizacionDataGridView = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ObservacionesTextBox = new System.Windows.Forms.TextBox();
             this.AgregarButtton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BuscarButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.CotizacionIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleCotizacionDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // EliminarButton
             // 
             this.EliminarButton.BackgroundImage = global::RegistroDetalle.Properties.Resources.Delete_16px;
             this.EliminarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.EliminarButton.Location = new System.Drawing.Point(364, 469);
+            this.EliminarButton.Location = new System.Drawing.Point(383, 469);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(99, 23);
             this.EliminarButton.TabIndex = 19;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
             this.GuardarButton.BackgroundImage = global::RegistroDetalle.Properties.Resources.Save_16px;
             this.GuardarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GuardarButton.Location = new System.Drawing.Point(190, 469);
+            this.GuardarButton.Location = new System.Drawing.Point(205, 469);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(95, 23);
             this.GuardarButton.TabIndex = 18;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -87,6 +93,7 @@
             this.NuevoButton.TabIndex = 17;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // label1
             // 
@@ -98,12 +105,12 @@
             this.label1.Text = "CotizacionId";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // numericUpDown1
+            // CotizacionIdNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(83, 21);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(57, 20);
-            this.numericUpDown1.TabIndex = 21;
+            this.CotizacionIdNumericUpDown.Location = new System.Drawing.Point(83, 21);
+            this.CotizacionIdNumericUpDown.Name = "CotizacionIdNumericUpDown";
+            this.CotizacionIdNumericUpDown.Size = new System.Drawing.Size(57, 20);
+            this.CotizacionIdNumericUpDown.TabIndex = 21;
             // 
             // label2
             // 
@@ -114,14 +121,14 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Fecha";
             // 
-            // dateTimePicker1
+            // FechaDateTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(404, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker1.TabIndex = 23;
+            this.FechaDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(404, 22);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(88, 20);
+            this.FechaDateTimePicker.TabIndex = 23;
             // 
             // label3
             // 
@@ -132,13 +139,13 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "Persona:";
             // 
-            // comboBox1
+            // PersonaComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(67, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(425, 21);
-            this.comboBox1.TabIndex = 25;
+            this.PersonaComboBox.FormattingEnabled = true;
+            this.PersonaComboBox.Location = new System.Drawing.Point(67, 62);
+            this.PersonaComboBox.Name = "PersonaComboBox";
+            this.PersonaComboBox.Size = new System.Drawing.Size(425, 21);
+            this.PersonaComboBox.TabIndex = 25;
             // 
             // label4
             // 
@@ -149,13 +156,13 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Artículo";
             // 
-            // comboBox2
+            // ArticuloComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(18, 121);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 27;
+            this.ArticuloComboBox.FormattingEnabled = true;
+            this.ArticuloComboBox.Location = new System.Drawing.Point(18, 121);
+            this.ArticuloComboBox.Name = "ArticuloComboBox";
+            this.ArticuloComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ArticuloComboBox.TabIndex = 27;
             // 
             // label5
             // 
@@ -184,34 +191,35 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Importe";
             // 
-            // textBox1
+            // CantidadCotizadaTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(163, 122);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 31;
+            this.CantidadCotizadaTextBox.Location = new System.Drawing.Point(163, 122);
+            this.CantidadCotizadaTextBox.Name = "CantidadCotizadaTextBox";
+            this.CantidadCotizadaTextBox.Size = new System.Drawing.Size(82, 20);
+            this.CantidadCotizadaTextBox.TabIndex = 31;
             // 
-            // textBox2
+            // PrecioTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(266, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(82, 20);
-            this.textBox2.TabIndex = 32;
+            this.PrecioTextBox.Location = new System.Drawing.Point(266, 122);
+            this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.Size = new System.Drawing.Size(82, 20);
+            this.PrecioTextBox.TabIndex = 32;
+            this.PrecioTextBox.TextChanged += new System.EventHandler(this.PrecioTextBox_TextChanged);
             // 
-            // textBox3
+            // ImporteTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(364, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(82, 20);
-            this.textBox3.TabIndex = 33;
+            this.ImporteTextBox.Location = new System.Drawing.Point(364, 121);
+            this.ImporteTextBox.Name = "ImporteTextBox";
+            this.ImporteTextBox.Size = new System.Drawing.Size(82, 20);
+            this.ImporteTextBox.TabIndex = 33;
             // 
-            // dataGridView1
+            // DetalleCotizacionDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 148);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(495, 227);
-            this.dataGridView1.TabIndex = 35;
+            this.DetalleCotizacionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleCotizacionDataGridView.Location = new System.Drawing.Point(18, 148);
+            this.DetalleCotizacionDataGridView.Name = "DetalleCotizacionDataGridView";
+            this.DetalleCotizacionDataGridView.Size = new System.Drawing.Size(495, 227);
+            this.DetalleCotizacionDataGridView.TabIndex = 35;
             // 
             // label8
             // 
@@ -222,12 +230,12 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "Total";
             // 
-            // textBox4
+            // TotalTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(431, 378);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(82, 20);
-            this.textBox4.TabIndex = 37;
+            this.TotalTextBox.Location = new System.Drawing.Point(431, 378);
+            this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.Size = new System.Drawing.Size(82, 20);
+            this.TotalTextBox.TabIndex = 37;
             // 
             // label9
             // 
@@ -238,13 +246,13 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "Observaciones";
             // 
-            // textBox5
+            // ObservacionesTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(15, 394);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(216, 54);
-            this.textBox5.TabIndex = 39;
+            this.ObservacionesTextBox.Location = new System.Drawing.Point(15, 394);
+            this.ObservacionesTextBox.Multiline = true;
+            this.ObservacionesTextBox.Name = "ObservacionesTextBox";
+            this.ObservacionesTextBox.Size = new System.Drawing.Size(216, 54);
+            this.ObservacionesTextBox.TabIndex = 39;
             // 
             // AgregarButtton
             // 
@@ -254,39 +262,59 @@
             this.AgregarButtton.TabIndex = 40;
             this.AgregarButtton.Text = "Agregar";
             this.AgregarButtton.UseVisualStyleBackColor = true;
+            this.AgregarButtton.Click += new System.EventHandler(this.AgregarButtton_Click);
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
+            // BuscarButton
+            // 
+            this.BuscarButton.BackgroundImage = global::RegistroDetalle.Properties.Resources.Search_16px;
+            this.BuscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BuscarButton.Location = new System.Drawing.Point(146, 18);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(101, 23);
+            this.BuscarButton.TabIndex = 41;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // RegistrarCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 518);
+            this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.AgregarButtton);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.ObservacionesTextBox);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TotalTextBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DetalleCotizacionDataGridView);
+            this.Controls.Add(this.ImporteTextBox);
+            this.Controls.Add(this.PrecioTextBox);
+            this.Controls.Add(this.CantidadCotizadaTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.ArticuloComboBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.PersonaComboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.CotizacionIdNumericUpDown);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
             this.Name = "RegistrarCotizacion";
             this.Text = "Registrar Cotizacion";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.RegistrarCotizacion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CotizacionIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleCotizacionDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,24 +326,26 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown CotizacionIdNumericUpDown;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox PersonaComboBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox ArticuloComboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox CantidadCotizadaTextBox;
+        private System.Windows.Forms.TextBox PrecioTextBox;
+        private System.Windows.Forms.TextBox ImporteTextBox;
+        private System.Windows.Forms.DataGridView DetalleCotizacionDataGridView;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TotalTextBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ObservacionesTextBox;
         private System.Windows.Forms.Button AgregarButtton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Button BuscarButton;
     }
 }
