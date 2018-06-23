@@ -46,6 +46,16 @@ namespace RegistroDetalle
         {
             registrarPersonasToolStripMenuItem_Click(sender, e);
         }
+        private void ArticulosToolStripButton_Click(object sender, EventArgs e)
+        {
+            registrarArticulosToolStripMenuItem_Click(sender, e);
+        }
+
+        private void CotizacionesToolStripButton_Click(object sender, EventArgs e)
+        {
+            registrarCotizacionToolStripMenuItem_Click(sender, e);
+        }
+
 
         private void RegistrarPersonasToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {

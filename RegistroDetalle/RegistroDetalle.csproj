@@ -133,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\Scripts.sql" />
+    <None Include="Resources\User_48px.png" />
+    <None Include="Resources\Accounting_48px.png" />
+    <None Include="Resources\Buying_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

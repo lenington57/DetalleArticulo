@@ -37,7 +37,12 @@
             this.AyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistrarToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.PersonasToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ArticulosToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.CotizacionesToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.RegistrarToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -74,14 +79,14 @@
             // registrarArticulosToolStripMenuItem
             // 
             this.registrarArticulosToolStripMenuItem.Name = "registrarArticulosToolStripMenuItem";
-            this.registrarArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarArticulosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.registrarArticulosToolStripMenuItem.Text = "Registrar Articulos";
             this.registrarArticulosToolStripMenuItem.Click += new System.EventHandler(this.registrarArticulosToolStripMenuItem_Click);
             // 
             // registrarPersonasToolStripMenuItem
             // 
             this.registrarPersonasToolStripMenuItem.Name = "registrarPersonasToolStripMenuItem";
-            this.registrarPersonasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarPersonasToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.registrarPersonasToolStripMenuItem.Text = "Registrar Personas";
             this.registrarPersonasToolStripMenuItem.Click += new System.EventHandler(this.registrarPersonasToolStripMenuItem_Click);
             // 
@@ -100,7 +105,7 @@
             // registrarCotizacionToolStripMenuItem
             // 
             this.registrarCotizacionToolStripMenuItem.Name = "registrarCotizacionToolStripMenuItem";
-            this.registrarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.registrarCotizacionToolStripMenuItem.Text = "Registrar Cotizacion";
             this.registrarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.registrarCotizacionToolStripMenuItem_Click);
             // 
@@ -108,7 +113,12 @@
             // 
             this.RegistrarToolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.RegistrarToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.toolStripLabel1,
+            this.PersonasToolStripButton,
+            this.toolStripLabel2,
+            this.ArticulosToolStripButton,
+            this.toolStripLabel3,
+            this.CotizacionesToolStripButton});
             this.RegistrarToolStrip.Location = new System.Drawing.Point(0, 24);
             this.RegistrarToolStrip.Name = "RegistrarToolStrip";
             this.RegistrarToolStrip.Size = new System.Drawing.Size(282, 25);
@@ -116,15 +126,53 @@
             this.RegistrarToolStrip.Text = "Personas";
             this.RegistrarToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.RegistrarPersonasToolStrip_ItemClicked);
             // 
-            // toolStripButton1
+            // PersonasToolStripButton
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::RegistroDetalle.Properties.Resources.Edit_Property_16px;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.PersonasToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PersonasToolStripButton.Image = global::RegistroDetalle.Properties.Resources.User_48px;
+            this.PersonasToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PersonasToolStripButton.Name = "PersonasToolStripButton";
+            this.PersonasToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.PersonasToolStripButton.Text = "Registrar Personas";
+            this.PersonasToolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // ArticulosToolStripButton
+            // 
+            this.ArticulosToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ArticulosToolStripButton.Image = global::RegistroDetalle.Properties.Resources.Buying_48px;
+            this.ArticulosToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ArticulosToolStripButton.Name = "ArticulosToolStripButton";
+            this.ArticulosToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.ArticulosToolStripButton.Text = "Registrar Artículos";
+            this.ArticulosToolStripButton.Click += new System.EventHandler(this.ArticulosToolStripButton_Click);
+            // 
+            // CotizacionesToolStripButton
+            // 
+            this.CotizacionesToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CotizacionesToolStripButton.Image = global::RegistroDetalle.Properties.Resources.Accounting_48px;
+            this.CotizacionesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CotizacionesToolStripButton.Name = "CotizacionesToolStripButton";
+            this.CotizacionesToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.CotizacionesToolStripButton.Text = "Registrar Cotizaciones";
+            this.CotizacionesToolStripButton.Click += new System.EventHandler(this.CotizacionesToolStripButton_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(54, 22);
+            this.toolStripLabel1.Text = "Personas";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(54, 22);
+            this.toolStripLabel2.Text = "Artículos";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(74, 22);
+            this.toolStripLabel3.Text = "Cotizaciones";
             // 
             // Principal
             // 
@@ -136,7 +184,8 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";
-            this.Text = "Registro de Personas  y Artículos";
+            this.Text = "Registrar Personas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -158,7 +207,12 @@
         private System.Windows.Forms.ToolStripMenuItem registrarPersonasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarCotizacionToolStripMenuItem;
         private System.Windows.Forms.ToolStrip RegistrarToolStrip;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton PersonasToolStripButton;
+        private System.Windows.Forms.ToolStripButton ArticulosToolStripButton;
+        private System.Windows.Forms.ToolStripButton CotizacionesToolStripButton;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }
 

@@ -63,6 +63,26 @@ namespace RegistroDetalle.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Accounting_48px {
+            get {
+                object obj = ResourceManager.GetObject("Accounting_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Buying_48px {
+            get {
+                object obj = ResourceManager.GetObject("Buying_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_16px {
             get {
                 object obj = ResourceManager.GetObject("Delete_16px", resourceCulture);
@@ -96,6 +116,16 @@ namespace RegistroDetalle.Properties {
         internal static System.Drawing.Bitmap Search_16px {
             get {
                 object obj = ResourceManager.GetObject("Search_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_48px {
+            get {
+                object obj = ResourceManager.GetObject("User_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
