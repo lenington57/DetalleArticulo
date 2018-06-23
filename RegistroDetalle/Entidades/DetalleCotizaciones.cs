@@ -27,7 +27,7 @@ namespace RegistroDetalle.Entidades
         [ForeignKey("PersonaId")]
         public virtual Personas Personas { get; set; }
 
-        [ForeignKey("ArticuloId")]
+        [ForeignKey("ArticulosId")]
         public virtual Articulos Articulos { get; set; }
         
 

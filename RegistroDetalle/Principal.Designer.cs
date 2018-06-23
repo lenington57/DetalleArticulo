@@ -33,16 +33,16 @@
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPersonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistrarToolStrip = new System.Windows.Forms.ToolStrip();
-            this.PersonasToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.ArticulosToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.CotizacionesToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.PersonasToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.ArticulosToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.CotizacionesToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.RegistrarToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +90,13 @@
             this.registrarPersonasToolStripMenuItem.Text = "Registrar Personas";
             this.registrarPersonasToolStripMenuItem.Click += new System.EventHandler(this.registrarPersonasToolStripMenuItem_Click);
             // 
+            // registrarCotizacionToolStripMenuItem
+            // 
+            this.registrarCotizacionToolStripMenuItem.Name = "registrarCotizacionToolStripMenuItem";
+            this.registrarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.registrarCotizacionToolStripMenuItem.Text = "Registrar Cotizacion";
+            this.registrarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.registrarCotizacionToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
@@ -101,13 +108,6 @@
             this.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem";
             this.AyudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.AyudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // registrarCotizacionToolStripMenuItem
-            // 
-            this.registrarCotizacionToolStripMenuItem.Name = "registrarCotizacionToolStripMenuItem";
-            this.registrarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.registrarCotizacionToolStripMenuItem.Text = "Registrar Cotizacion";
-            this.registrarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.registrarCotizacionToolStripMenuItem_Click);
             // 
             // RegistrarToolStrip
             // 
@@ -126,6 +126,12 @@
             this.RegistrarToolStrip.Text = "Personas";
             this.RegistrarToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.RegistrarPersonasToolStrip_ItemClicked);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(54, 22);
+            this.toolStripLabel1.Text = "Personas";
+            // 
             // PersonasToolStripButton
             // 
             this.PersonasToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -135,6 +141,12 @@
             this.PersonasToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.PersonasToolStripButton.Text = "Registrar Personas";
             this.PersonasToolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(54, 22);
+            this.toolStripLabel2.Text = "Artículos";
             // 
             // ArticulosToolStripButton
             // 
@@ -146,6 +158,12 @@
             this.ArticulosToolStripButton.Text = "Registrar Artículos";
             this.ArticulosToolStripButton.Click += new System.EventHandler(this.ArticulosToolStripButton_Click);
             // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(74, 22);
+            this.toolStripLabel3.Text = "Cotizaciones";
+            // 
             // CotizacionesToolStripButton
             // 
             this.CotizacionesToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -155,24 +173,6 @@
             this.CotizacionesToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.CotizacionesToolStripButton.Text = "Registrar Cotizaciones";
             this.CotizacionesToolStripButton.Click += new System.EventHandler(this.CotizacionesToolStripButton_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(54, 22);
-            this.toolStripLabel1.Text = "Personas";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(54, 22);
-            this.toolStripLabel2.Text = "Artículos";
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(74, 22);
-            this.toolStripLabel3.Text = "Cotizaciones";
             // 
             // Principal
             // 
@@ -185,7 +185,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";
             this.Text = "Registrar Personas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

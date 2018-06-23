@@ -77,7 +77,7 @@ namespace RegistroDetalle.UI.Registros
                     ToInt(item.Cells["Id"].Value),
                     ToInt(item.Cells["CotizacionId"].Value),
                     ToInt(item.Cells["PersonaId"].Value),
-                    ToInt(item.Cells["ArticuloId"].Value),
+                    ToInt(item.Cells["ArticulosId"].Value),
                     ToSingle(item.Cells["Cantidad"].Value),
                     ToSingle(item.Cells["Precio"].Value),
                     ToSingle(item.Cells["Importe"].Value)
