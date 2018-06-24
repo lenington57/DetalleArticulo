@@ -146,6 +146,7 @@
             this.PersonaComboBox.Name = "PersonaComboBox";
             this.PersonaComboBox.Size = new System.Drawing.Size(425, 21);
             this.PersonaComboBox.TabIndex = 25;
+            this.PersonaComboBox.SelectedIndexChanged += new System.EventHandler(this.PersonaComboBox_SelectedIndexChanged);
             // 
             // label4
             // 

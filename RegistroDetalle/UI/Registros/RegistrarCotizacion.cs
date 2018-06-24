@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace RegistroDetalle.UI.Registros
 {
     public partial class RegistrarCotizacion : Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-YOJAIRI; Initial catalog = DetalleDb;
+        Integrated Security = True;");
+
         public RegistrarCotizacion()
         {
             InitializeComponent();
@@ -27,12 +31,41 @@ namespace RegistroDetalle.UI.Registros
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void RegistrarCotizacion_Load(object sender, EventArgs e)
         {
+            LlenarPersonaComboBOx();
+            LlenarArticuloComboBOx();
+        }
 
+        private void LlenarPersonaComboBOx()
+        {
+            string comsql = "select PersonaId, Nombres from Personas ";
+            SqlCommand comando = new SqlCommand(comsql, con);
+            con.Open();
+
+            SqlDataReader reader = comando.ExecuteReader();
+            if (reader.Read() == true)
+            {
+                PersonaComboBox.Items.Add(reader["Nombres"].ToString());
+            }
+            con.Close();
+        }
+
+        private void LlenarArticuloComboBOx()
+        {
+            string ComSql = "select Descripcion from Articulos";
+            SqlCommand Comando = new SqlCommand(ComSql, con);
+            con.Open();
+
+            SqlDataReader Reader = Comando.ExecuteReader();
+            if (Reader.Read() == true)
+            {           
+                ArticuloComboBox.Items.Add(Reader["Descripcion"].ToString());
+            }
+            con.Close();
         }
 
         private void LlenarCampos(Cotizaciones cotizaciones)
@@ -248,6 +281,11 @@ namespace RegistroDetalle.UI.Registros
             float res = cantCot * pre;
 
             ImporteTextBox.Text = res.ToString();
+        }
+
+        private void PersonaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
