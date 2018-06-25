@@ -16,12 +16,13 @@ namespace RegistroDetalle.UI.Registros
 {
     public partial class RegistrarCotizacion : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-YOJAIRI; Initial catalog = DetalleDb;
-        Integrated Security = True;");
+        //SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-YOJAIRI; Initial catalog = DetalleDb;
+        //Integrated Security = True;");
 
         public RegistrarCotizacion()
         {
             InitializeComponent();
+            LlenarComboBox();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,11 +37,11 @@ namespace RegistroDetalle.UI.Registros
 
         private void RegistrarCotizacion_Load(object sender, EventArgs e)
         {
-            LlenarPersonaComboBOx();
-            LlenarArticuloComboBOx();
+            //LlenarPersonaComboBOx();
+            //LlenarArticuloComboBOx();
         }
 
-        private void LlenarPersonaComboBOx()
+        /*private void LlenarPersonaComboBOx()
         {
             string comsql = "select PersonaId, Nombres from Personas ";
             SqlCommand comando = new SqlCommand(comsql, con);
@@ -66,7 +67,7 @@ namespace RegistroDetalle.UI.Registros
                 ArticuloComboBox.Items.Add(Reader["Descripcion"].ToString());
             }
             con.Close();
-        }
+        }*/
 
         private void LlenarCampos(Cotizaciones cotizaciones)
         {
@@ -125,9 +126,9 @@ namespace RegistroDetalle.UI.Registros
             Repositorio<Personas> PerRepositorio = new Repositorio<Personas>(new Contexto());
             Repositorio<Articulos> ArtRepositorio = new Repositorio<Articulos>(new Contexto());
 
-            ArticuloComboBox.DataSource = PerRepositorio.GetList(c => true);            
-            ArticuloComboBox.ValueMember = "PersonaId";
-            ArticuloComboBox.DisplayMember = "Nombre";
+            PersonaComboBox.DataSource = PerRepositorio.GetList(c => true);
+            PersonaComboBox.ValueMember = "PersonaId";
+            PersonaComboBox.DisplayMember = "Nombres";
             ArticuloComboBox.DataSource = ArtRepositorio.GetList(c => true);
             ArticuloComboBox.ValueMember = "ArticulosId";
             ArticuloComboBox.DisplayMember = "Descripcion";
