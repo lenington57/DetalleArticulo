@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using RegistroDetalle.BLL;
 using RegistroDetalle.DAL;
 using RegistroDetalle.Entidades;
+using RegistroDetalle.UI;
 
 namespace RegistroDetalle.UI.Registros
 {
@@ -102,7 +103,7 @@ namespace RegistroDetalle.UI.Registros
             Cotizaciones cotizaciones = new Cotizaciones();
 
             cotizaciones.CotizacionId = Convert.ToInt32(CotizacionIdNumericUpDown.Value);
-            cotizaciones.Fecha = FechaDateTimePicker.Value;
+            cotizaciones.Fecha = FechaDateTimePicker.Value; 
             cotizaciones.Observaciones = ObservacionesTextBox.Text;
             
             foreach (DataGridViewRow item in DetalleCotizacionDataGridView.Rows)//Agregar cada linea del Grid al detalle

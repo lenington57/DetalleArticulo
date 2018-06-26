@@ -66,7 +66,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(383, 469);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(99, 23);
-            this.EliminarButton.TabIndex = 19;
+            this.EliminarButton.TabIndex = 10;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
@@ -78,7 +78,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(205, 469);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(95, 23);
-            this.GuardarButton.TabIndex = 18;
+            this.GuardarButton.TabIndex = 8;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
@@ -90,7 +90,7 @@
             this.NuevoButton.Location = new System.Drawing.Point(32, 469);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(96, 23);
-            this.NuevoButton.TabIndex = 17;
+            this.NuevoButton.TabIndex = 9;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
@@ -110,7 +110,7 @@
             this.CotizacionIdNumericUpDown.Location = new System.Drawing.Point(83, 21);
             this.CotizacionIdNumericUpDown.Name = "CotizacionIdNumericUpDown";
             this.CotizacionIdNumericUpDown.Size = new System.Drawing.Size(57, 20);
-            this.CotizacionIdNumericUpDown.TabIndex = 21;
+            this.CotizacionIdNumericUpDown.TabIndex = 1;
             // 
             // label2
             // 
@@ -128,7 +128,7 @@
             this.FechaDateTimePicker.Location = new System.Drawing.Point(404, 22);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
             this.FechaDateTimePicker.Size = new System.Drawing.Size(88, 20);
-            this.FechaDateTimePicker.TabIndex = 23;
+            this.FechaDateTimePicker.TabIndex = 0;
             // 
             // label3
             // 
@@ -145,7 +145,7 @@
             this.PersonaComboBox.Location = new System.Drawing.Point(67, 62);
             this.PersonaComboBox.Name = "PersonaComboBox";
             this.PersonaComboBox.Size = new System.Drawing.Size(425, 21);
-            this.PersonaComboBox.TabIndex = 25;
+            this.PersonaComboBox.TabIndex = 2;
             this.PersonaComboBox.SelectedIndexChanged += new System.EventHandler(this.PersonaComboBox_SelectedIndexChanged);
             // 
             // label4
@@ -163,7 +163,7 @@
             this.ArticuloComboBox.Location = new System.Drawing.Point(18, 121);
             this.ArticuloComboBox.Name = "ArticuloComboBox";
             this.ArticuloComboBox.Size = new System.Drawing.Size(121, 21);
-            this.ArticuloComboBox.TabIndex = 27;
+            this.ArticuloComboBox.TabIndex = 3;
             // 
             // label5
             // 
@@ -197,14 +197,14 @@
             this.CantidadCotizadaTextBox.Location = new System.Drawing.Point(163, 122);
             this.CantidadCotizadaTextBox.Name = "CantidadCotizadaTextBox";
             this.CantidadCotizadaTextBox.Size = new System.Drawing.Size(82, 20);
-            this.CantidadCotizadaTextBox.TabIndex = 31;
+            this.CantidadCotizadaTextBox.TabIndex = 4;
             // 
             // PrecioTextBox
             // 
             this.PrecioTextBox.Location = new System.Drawing.Point(266, 122);
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(82, 20);
-            this.PrecioTextBox.TabIndex = 32;
+            this.PrecioTextBox.TabIndex = 5;
             this.PrecioTextBox.TextChanged += new System.EventHandler(this.PrecioTextBox_TextChanged);
             // 
             // ImporteTextBox
@@ -212,7 +212,7 @@
             this.ImporteTextBox.Location = new System.Drawing.Point(364, 121);
             this.ImporteTextBox.Name = "ImporteTextBox";
             this.ImporteTextBox.Size = new System.Drawing.Size(82, 20);
-            this.ImporteTextBox.TabIndex = 33;
+            this.ImporteTextBox.TabIndex = 6;
             // 
             // DetalleCotizacionDataGridView
             // 
@@ -253,14 +253,14 @@
             this.ObservacionesTextBox.Multiline = true;
             this.ObservacionesTextBox.Name = "ObservacionesTextBox";
             this.ObservacionesTextBox.Size = new System.Drawing.Size(216, 54);
-            this.ObservacionesTextBox.TabIndex = 39;
+            this.ObservacionesTextBox.TabIndex = 7;
             // 
             // AgregarButtton
             // 
             this.AgregarButtton.Location = new System.Drawing.Point(453, 120);
             this.AgregarButtton.Name = "AgregarButtton";
             this.AgregarButtton.Size = new System.Drawing.Size(60, 23);
-            this.AgregarButtton.TabIndex = 40;
+            this.AgregarButtton.TabIndex = 11;
             this.AgregarButtton.Text = "Agregar";
             this.AgregarButtton.UseVisualStyleBackColor = true;
             this.AgregarButtton.Click += new System.EventHandler(this.AgregarButtton_Click);

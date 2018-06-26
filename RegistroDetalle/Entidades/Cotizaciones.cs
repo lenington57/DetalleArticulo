@@ -18,7 +18,7 @@ namespace RegistroDetalle.Entidades
         public string Observaciones { get; set; }
 
 
-        public virtual ICollection<DetalleCotizaciones> Detalle { get; set; }
+        public virtual List<DetalleCotizaciones> Detalle { get; set; }
 
         public Cotizaciones()
         {   
