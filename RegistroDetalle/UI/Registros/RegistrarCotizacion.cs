@@ -105,9 +105,6 @@ namespace RegistroDetalle.UI.Registros
 
         private void LlenarImporte()
         {
-            if (CantidadCotizadaNumericUpDown.Value == 0)
-                MessageBox.Show("Debe ingresar una cantidad", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             ImporteTextBox.Text = BLL.CotizacionesBLL.Importe(Convert.ToSingle(CantidadCotizadaNumericUpDown.Value), Convert.ToSingle(PrecioTextBox.Text)).ToString();
         }
 

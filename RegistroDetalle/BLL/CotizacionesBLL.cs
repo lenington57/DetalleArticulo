@@ -31,7 +31,7 @@ namespace RegistroDetalle.BLL
                 {
                     foreach (var item in cotizaciones.Detalle)
                     {
-                        contexto.Articulos.Find(item.ArticulosId).CantCotizada += item.CantidadCotizada;
+                        contexto.Articulos.Find(item.ArticulosId).Existencia -= item.CantidadCotizada;
                     }
                     contexto.SaveChanges();//Guardar los cambios.
                     paso = true;
@@ -61,14 +61,14 @@ namespace RegistroDetalle.BLL
 
                 foreach (var item in CantCotAnt.Detalle)//recorrer el detalle anterior
                 {
-                    //restar todas las visitas
-                    contexto.Articulos.Find(item.ArticulosId).CantCotizada -= item.CantidadCotizada;
+                    //restar todas las cantidades cotizadas
+                    contexto.Articulos.Find(item.ArticulosId).Existencia -= item.CantidadCotizada;
 
                     //determinar si el item no esta en el detalle actual
                     if (!cotizaciones.Detalle.ToList().Exists(v => v.Id == item.Id))
                     {
-                        contexto.Articulos.Find(item.ArticulosId).CantCotizada -= item.CantidadCotizada;
-                        item.Articulos = null; //quitar la ciudad para que EF no intente hacerle nada
+                        contexto.Articulos.Find(item.ArticulosId).Existencia -= item.CantidadCotizada;
+                        item.Articulos = null; //quitar la cantidad para que EF no intente hacerle nada
                         contexto.Entry(item).State = EntityState.Deleted;
                     }
                 }
@@ -76,8 +76,8 @@ namespace RegistroDetalle.BLL
                 //recorrer el detalle
                 foreach (var item in cotizaciones.Detalle)
                 {
-                    //Sumar todas las visitas
-                    contexto.Articulos.Find(item.ArticulosId).CantCotizada += item.CantidadCotizada;
+                    //Sumar todas las cantidades cotizadas
+                    contexto.Articulos.Find(item.ArticulosId).Existencia += item.CantidadCotizada;
 
                     //Muy importante indicar que pasara con la entidad del detalle
                     var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
@@ -154,9 +154,10 @@ namespace RegistroDetalle.BLL
                     //no sera posible leer la lista
                     cotizaciones.Detalle.Count();
                     //Cargar las Descripcion
+                    //Cargar el Nombre Descripcion
                     foreach (var item in cotizaciones.Detalle)
                     {
-                        //forzando la Descripcion a cargarse
+                        //forzando la Descripcion y Nombres a cargarse
                         string s = item.Articulos.Descripcion;
                         string ss = item.Personas.Nombres;
                     }
