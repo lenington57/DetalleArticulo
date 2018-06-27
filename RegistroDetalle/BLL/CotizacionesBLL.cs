@@ -189,5 +189,10 @@ namespace RegistroDetalle.BLL
             }
             return cotizaciones;
         }
+
+        public static float CalcularPrecio(float a, float b)
+        {
+            return a * b;
+        }
     }
 }

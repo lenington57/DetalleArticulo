@@ -32,12 +32,13 @@ namespace RegistroDetalle.BLL.Tests
         {
             bool paso;
             Personas personas = new Personas();
-            personas.PersonaId = 4;
+            personas.PersonaId = 5;
+            personas.Nombres = "Maria";
             personas.Fecha = DateTime.Now;
             personas.Cedula = "0000000000";
             personas.Telefono = "1111111111";
             personas.Direccion = "Montañas Gal";
-            paso = PersonasBLL.Guardar(personas);
+            paso = PersonasBLL.Modificar(personas);
             Assert.AreEqual(paso, true);
         }
 

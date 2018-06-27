@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\Scripts.sql" />
+    <None Include="Resources\Plus Math_16px.png" />
     <None Include="Resources\Print_16px.png" />
     <None Include="Resources\Print_48px.png" />
     <None Include="Resources\User_48px.png" />

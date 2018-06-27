@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,58 +18,16 @@ namespace RegistroDetalle.UI.Registros
 {
     public partial class RegistrarCotizacion : Form
     {
-        //SqlConnection con = new SqlConnection(@"Data Source = LAPTOP-YOJAIRI; Initial catalog = DetalleDb;
-        //Integrated Security = True;");
-
         public RegistrarCotizacion()
         {
             InitializeComponent();
             LlenarComboBox();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void RegistrarCotizacion_Load(object sender, EventArgs e)
         {
             
         }
-
-        private void RegistrarCotizacion_Load(object sender, EventArgs e)
-        {
-            //LlenarPersonaComboBOx();
-            //LlenarArticuloComboBOx();
-        }
-
-        /*private void LlenarPersonaComboBOx()
-        {
-            string comsql = "select PersonaId, Nombres from Personas ";
-            SqlCommand comando = new SqlCommand(comsql, con);
-            con.Open();
-
-            SqlDataReader reader = comando.ExecuteReader();
-            if (reader.Read() == true)
-            {
-                PersonaComboBox.Items.Add(reader["Nombres"].ToString());
-            }
-            con.Close();
-        }
-
-        private void LlenarArticuloComboBOx()
-        {
-            string ComSql = "select Descripcion from Articulos";
-            SqlCommand Comando = new SqlCommand(ComSql, con);
-            con.Open();
-
-            SqlDataReader Reader = Comando.ExecuteReader();
-            if (Reader.Read() == true)
-            {           
-                ArticuloComboBox.Items.Add(Reader["Descripcion"].ToString());
-            }
-            con.Close();
-        }*/
 
         private void LlenarCampos(Cotizaciones cotizaciones)
         {
@@ -113,7 +72,7 @@ namespace RegistroDetalle.UI.Registros
                     ToInt(item.Cells["CotizacionId"].Value),
                     ToInt(item.Cells["PersonaId"].Value),
                     ToInt(item.Cells["ArticulosId"].Value),
-                    ToSingle(item.Cells["Cantidad"].Value),
+                    ToSingle(item.Cells["CantidadCotizada"].Value),
                     ToSingle(item.Cells["Precio"].Value),
                     ToSingle(item.Cells["Importe"].Value)
                 );
@@ -133,6 +92,15 @@ namespace RegistroDetalle.UI.Registros
             ArticuloComboBox.DataSource = ArtRepositorio.GetList(c => true);
             ArticuloComboBox.ValueMember = "ArticulosId";
             ArticuloComboBox.DisplayMember = "Descripcion";
+        }
+
+        private void LlenarPrecio()
+        {
+            List<Articulos> ListArticulos = BLL.ArticulosBLL.GetList(c => c.Descripcion == ArticuloComboBox.Text);
+            foreach (var item in ListArticulos)
+            {
+                PrecioTextBox.Text = item.Precio.ToString();
+            }
         }
 
         private bool HayErrores()
@@ -211,6 +179,23 @@ namespace RegistroDetalle.UI.Registros
             DetalleCotizacionDataGridView.DataSource = detalle;
         }
 
+        private void RemoverButton_Click(object sender, EventArgs e)
+        {
+            if (DetalleCotizacionDataGridView.Rows.Count > 0 && DetalleCotizacionDataGridView.CurrentRow != null)
+            {
+                //convertir el grid en la lista
+                List<DetalleCotizaciones> detalle = (List<DetalleCotizaciones>)DetalleCotizacionDataGridView.DataSource;
+
+                //remover la fila
+                detalle.RemoveAt(DetalleCotizacionDataGridView.CurrentRow.Index);
+
+                // Cargar el detalle al Grid
+                DetalleCotizacionDataGridView.DataSource = null;
+                DetalleCotizacionDataGridView.DataSource = detalle;
+
+            }
+        }
+
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             CotizacionIdNumericUpDown.Value = 0;
@@ -264,28 +249,35 @@ namespace RegistroDetalle.UI.Registros
                 MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }       
+
+        private void CantidadCotizadaTextBox_TextChanged(object sender, EventArgs e)
+        {
+            LlenarPrecio();
+            ImporteTextBox.Text = BLL.CotizacionesBLL.CalcularPrecio(Convert.ToSingle(CantidadCotizadaTextBox.Text), Convert.ToSingle(PrecioTextBox.Text)).ToString();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void PrecioTextBox_TextChanged(object sender, EventArgs e)
         {
-            int val;
-            bool result = int.TryParse(CantidadCotizadaTextBox.Text, out val);
-            if (!result)
-                return;
 
-            int valor;
-            bool resulta = int.TryParse(PrecioTextBox.Text, out valor);
-            if (!result)
-                return;
-
-            int cantCot = Convert.ToInt32(val);
-            int pre = Convert.ToInt32(valor);
-            float res = cantCot * pre;
-
-            ImporteTextBox.Text = res.ToString();
         }
 
         private void PersonaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ArticuloComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

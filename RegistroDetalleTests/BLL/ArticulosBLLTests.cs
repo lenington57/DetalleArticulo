@@ -62,13 +62,13 @@ namespace RegistroDetalle.BLL.Tests
         }
 
         [TestMethod()]
-        public void GetListTest(Expression<Func<Personas, bool>> expression)
+        public void GetListTest(Expression<Func<Articulos, bool>> expression)
         {
             Contexto contexto = new Contexto();
 
-            List<Personas> ListPersonas = new List<Personas>();
-            ListPersonas = contexto.Personas.Where(expression).ToList();
-            Assert.IsNotNull(ListPersonas);
+            List<Articulos> ListArticulos = new List<Articulos>();
+            ListArticulos = contexto.Articulos.Where(expression).ToList();
+            Assert.IsNotNull(ListArticulos);
         }
     }
 }

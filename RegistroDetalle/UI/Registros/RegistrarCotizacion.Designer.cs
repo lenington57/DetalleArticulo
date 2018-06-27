@@ -54,6 +54,7 @@
             this.AgregarButtton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.RemoverButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CotizacionIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCotizacionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
@@ -160,15 +161,16 @@
             // ArticuloComboBox
             // 
             this.ArticuloComboBox.FormattingEnabled = true;
-            this.ArticuloComboBox.Location = new System.Drawing.Point(18, 121);
+            this.ArticuloComboBox.Location = new System.Drawing.Point(18, 124);
             this.ArticuloComboBox.Name = "ArticuloComboBox";
             this.ArticuloComboBox.Size = new System.Drawing.Size(121, 21);
             this.ArticuloComboBox.TabIndex = 3;
+            this.ArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.ArticuloComboBox_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(160, 108);
+            this.label5.Location = new System.Drawing.Point(145, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 28;
@@ -177,7 +179,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(263, 106);
+            this.label6.Location = new System.Drawing.Point(231, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 29;
@@ -186,7 +188,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(362, 106);
+            this.label7.Location = new System.Drawing.Point(319, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 30;
@@ -194,22 +196,24 @@
             // 
             // CantidadCotizadaTextBox
             // 
-            this.CantidadCotizadaTextBox.Location = new System.Drawing.Point(163, 122);
+            this.CantidadCotizadaTextBox.Location = new System.Drawing.Point(146, 124);
             this.CantidadCotizadaTextBox.Name = "CantidadCotizadaTextBox";
             this.CantidadCotizadaTextBox.Size = new System.Drawing.Size(82, 20);
             this.CantidadCotizadaTextBox.TabIndex = 4;
+            this.CantidadCotizadaTextBox.TextChanged += new System.EventHandler(this.CantidadCotizadaTextBox_TextChanged);
             // 
             // PrecioTextBox
             // 
-            this.PrecioTextBox.Location = new System.Drawing.Point(266, 122);
+            this.PrecioTextBox.Location = new System.Drawing.Point(234, 124);
             this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.ReadOnly = true;
             this.PrecioTextBox.Size = new System.Drawing.Size(82, 20);
             this.PrecioTextBox.TabIndex = 5;
             this.PrecioTextBox.TextChanged += new System.EventHandler(this.PrecioTextBox_TextChanged);
             // 
             // ImporteTextBox
             // 
-            this.ImporteTextBox.Location = new System.Drawing.Point(364, 121);
+            this.ImporteTextBox.Location = new System.Drawing.Point(322, 124);
             this.ImporteTextBox.Name = "ImporteTextBox";
             this.ImporteTextBox.Size = new System.Drawing.Size(82, 20);
             this.ImporteTextBox.TabIndex = 6;
@@ -235,6 +239,7 @@
             // 
             this.TotalTextBox.Location = new System.Drawing.Point(431, 378);
             this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.ReadOnly = true;
             this.TotalTextBox.Size = new System.Drawing.Size(82, 20);
             this.TotalTextBox.TabIndex = 37;
             // 
@@ -257,9 +262,11 @@
             // 
             // AgregarButtton
             // 
-            this.AgregarButtton.Location = new System.Drawing.Point(453, 120);
+            this.AgregarButtton.BackgroundImage = global::RegistroDetalle.Properties.Resources.Plus_Math_16px;
+            this.AgregarButtton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AgregarButtton.Location = new System.Drawing.Point(419, 98);
             this.AgregarButtton.Name = "AgregarButtton";
-            this.AgregarButtton.Size = new System.Drawing.Size(60, 23);
+            this.AgregarButtton.Size = new System.Drawing.Size(94, 23);
             this.AgregarButtton.TabIndex = 11;
             this.AgregarButtton.Text = "Agregar";
             this.AgregarButtton.UseVisualStyleBackColor = true;
@@ -281,11 +288,24 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
+            // RemoverButton
+            // 
+            this.RemoverButton.BackgroundImage = global::RegistroDetalle.Properties.Resources.Delete_16px;
+            this.RemoverButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RemoverButton.Location = new System.Drawing.Point(419, 122);
+            this.RemoverButton.Name = "RemoverButton";
+            this.RemoverButton.Size = new System.Drawing.Size(95, 23);
+            this.RemoverButton.TabIndex = 42;
+            this.RemoverButton.Text = "Remover";
+            this.RemoverButton.UseVisualStyleBackColor = true;
+            this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
+            // 
             // RegistrarCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 518);
+            this.Controls.Add(this.RemoverButton);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.AgregarButtton);
             this.Controls.Add(this.ObservacionesTextBox);
@@ -348,5 +368,6 @@
         private System.Windows.Forms.Button AgregarButtton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Button RemoverButton;
     }
 }
