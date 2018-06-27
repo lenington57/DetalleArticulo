@@ -39,7 +39,7 @@ namespace RegistroDetalle.BLL.Tests
             articulos.Precio = 80f;
             articulos.Existencia = 45f;
             articulos.CantCotizada = 18f;
-            paso = ArticulosBLL.Guardar(articulos);
+            paso = ArticulosBLL.Modificar(articulos);
             Assert.AreEqual(paso, true);
         }
 

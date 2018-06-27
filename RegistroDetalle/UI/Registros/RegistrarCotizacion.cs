@@ -103,6 +103,47 @@ namespace RegistroDetalle.UI.Registros
             }
         }
 
+        private void LlenarImporte()
+        {
+            if (CantidadCotizadaNumericUpDown.Value == 0)
+                MessageBox.Show("Debe ingresar una cantidad", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ImporteTextBox.Text = BLL.CotizacionesBLL.Importe(Convert.ToSingle(CantidadCotizadaNumericUpDown.Value), Convert.ToSingle(PrecioTextBox.Text)).ToString();
+        }
+
+        private void LlenarTotal()
+        {
+            List<DetalleCotizaciones> detalle = new List<DetalleCotizaciones>();
+
+            if (DetalleCotizacionDataGridView.DataSource != null)
+            {
+                detalle = (List<DetalleCotizaciones>)DetalleCotizacionDataGridView.DataSource;
+            }
+            float Total = 0;
+            foreach (var item in detalle)
+            {
+                Total += item.Importe;
+            }
+            TotalTextBox.Text = Total.ToString();
+        }
+
+        private void RebajarTotal()
+        {
+            List<DetalleCotizaciones> detalle = new List<DetalleCotizaciones>();
+
+            if (DetalleCotizacionDataGridView.DataSource != null)
+            {
+                detalle = (List<DetalleCotizaciones>)DetalleCotizacionDataGridView.DataSource;
+            }
+            float Total = 0;
+            foreach (var item in detalle)
+            {
+                Total -= item.Importe;
+            }
+            Total *= (-1);
+            TotalTextBox.Text = Total.ToString();
+        }
+
         private bool HayErrores()
         {
             bool HayErrores = false;
@@ -121,9 +162,9 @@ namespace RegistroDetalle.UI.Registros
                 HayErrores = true;
             }
 
-            if (String.IsNullOrWhiteSpace(CantidadCotizadaTextBox.Text))
+            if (CantidadCotizadaNumericUpDown.Value == 0)
             {
-                MyErrorProvider.SetError(CantidadCotizadaTextBox,
+                MyErrorProvider.SetError(CantidadCotizadaNumericUpDown,
                     "Digite una cantidad");
                 HayErrores = true;
             }
@@ -168,15 +209,16 @@ namespace RegistroDetalle.UI.Registros
                     cotizacionId: (int)CotizacionIdNumericUpDown.Value,
                     personaId: (int)PersonaComboBox.SelectedValue,
                     articulosId: (int)ArticuloComboBox.SelectedValue,
-                    cantidadCotizada: (float)Convert.ToSingle(CantidadCotizadaTextBox.Text),
+                    cantidadCotizada: (float)Convert.ToSingle(CantidadCotizadaNumericUpDown.Value),
                     precio: (float)Convert.ToSingle(PrecioTextBox.Text),
                     importe: (float)Convert.ToSingle(ImporteTextBox.Text)
-
                 ));
 
             //Cargar el detalle al Grid
             DetalleCotizacionDataGridView.DataSource = null;
             DetalleCotizacionDataGridView.DataSource = detalle;
+
+            LlenarTotal();
         }
 
         private void RemoverButton_Click(object sender, EventArgs e)
@@ -193,13 +235,14 @@ namespace RegistroDetalle.UI.Registros
                 DetalleCotizacionDataGridView.DataSource = null;
                 DetalleCotizacionDataGridView.DataSource = detalle;
 
+                RebajarTotal();
             }
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             CotizacionIdNumericUpDown.Value = 0;
-            CantidadCotizadaTextBox.Clear();
+            CantidadCotizadaNumericUpDown.Value = 0;
             PrecioTextBox.Clear();
             ImporteTextBox.Clear();
             TotalTextBox.Clear();
@@ -221,9 +264,9 @@ namespace RegistroDetalle.UI.Registros
                 return;
             }
 
+            //Determinar si es Guardar o Modificar
             cotizaciones = LlenaClase();
 
-            //Determinar si es Guardar o Modificar
             if (CotizacionIdNumericUpDown.Value == 0)
                 Paso = BLL.CotizacionesBLL.Guardar(cotizaciones);
             else
@@ -249,37 +292,51 @@ namespace RegistroDetalle.UI.Registros
                 MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }       
+        }
 
-        private void CantidadCotizadaTextBox_TextChanged(object sender, EventArgs e)
+        private void CantidadCotizadaNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             LlenarPrecio();
-            ImporteTextBox.Text = BLL.CotizacionesBLL.CalcularPrecio(Convert.ToSingle(CantidadCotizadaTextBox.Text), Convert.ToSingle(PrecioTextBox.Text)).ToString();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PrecioTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PersonaComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            LlenarImporte();
         }
 
         private void ArticuloComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LlenarPrecio();
+        }
 
+        private void CantidadCotizadaTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+        //Click sin querer
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Click sin querer
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Click sin querer
+        private void PrecioTextBox_TextChanged(object sender, EventArgs e)
+        {
+        }
+        //Probando llenar el ComboBox
+        private void PersonaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        //Click sin querer
+        private void DetalleCotizacionDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        //Probando llenar el Total
+        private void ObservacionesTextBox_TextChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

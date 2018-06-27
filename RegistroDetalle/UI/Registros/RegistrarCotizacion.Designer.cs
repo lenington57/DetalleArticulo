@@ -43,7 +43,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.CantidadCotizadaTextBox = new System.Windows.Forms.TextBox();
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.ImporteTextBox = new System.Windows.Forms.TextBox();
             this.DetalleCotizacionDataGridView = new System.Windows.Forms.DataGridView();
@@ -55,9 +54,11 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.BuscarButton = new System.Windows.Forms.Button();
             this.RemoverButton = new System.Windows.Forms.Button();
+            this.CantidadCotizadaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.CotizacionIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCotizacionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadCotizadaNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // EliminarButton
@@ -194,14 +195,6 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Importe";
             // 
-            // CantidadCotizadaTextBox
-            // 
-            this.CantidadCotizadaTextBox.Location = new System.Drawing.Point(146, 124);
-            this.CantidadCotizadaTextBox.Name = "CantidadCotizadaTextBox";
-            this.CantidadCotizadaTextBox.Size = new System.Drawing.Size(82, 20);
-            this.CantidadCotizadaTextBox.TabIndex = 4;
-            this.CantidadCotizadaTextBox.TextChanged += new System.EventHandler(this.CantidadCotizadaTextBox_TextChanged);
-            // 
             // PrecioTextBox
             // 
             this.PrecioTextBox.Location = new System.Drawing.Point(234, 124);
@@ -225,6 +218,7 @@
             this.DetalleCotizacionDataGridView.Name = "DetalleCotizacionDataGridView";
             this.DetalleCotizacionDataGridView.Size = new System.Drawing.Size(495, 227);
             this.DetalleCotizacionDataGridView.TabIndex = 35;
+            this.DetalleCotizacionDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleCotizacionDataGridView_CellContentClick);
             // 
             // label8
             // 
@@ -259,6 +253,7 @@
             this.ObservacionesTextBox.Name = "ObservacionesTextBox";
             this.ObservacionesTextBox.Size = new System.Drawing.Size(216, 54);
             this.ObservacionesTextBox.TabIndex = 7;
+            this.ObservacionesTextBox.TextChanged += new System.EventHandler(this.ObservacionesTextBox_TextChanged);
             // 
             // AgregarButtton
             // 
@@ -300,11 +295,21 @@
             this.RemoverButton.UseVisualStyleBackColor = true;
             this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
             // 
+            // CantidadCotizadaNumericUpDown
+            // 
+            this.CantidadCotizadaNumericUpDown.Location = new System.Drawing.Point(145, 125);
+            this.CantidadCotizadaNumericUpDown.Name = "CantidadCotizadaNumericUpDown";
+            this.CantidadCotizadaNumericUpDown.Size = new System.Drawing.Size(82, 20);
+            this.CantidadCotizadaNumericUpDown.TabIndex = 43;
+            this.CantidadCotizadaNumericUpDown.ValueChanged += new System.EventHandler(this.CantidadCotizadaNumericUpDown_ValueChanged);
+            // 
             // RegistrarCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(518, 518);
+            this.Controls.Add(this.CantidadCotizadaNumericUpDown);
             this.Controls.Add(this.RemoverButton);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.AgregarButtton);
@@ -315,7 +320,6 @@
             this.Controls.Add(this.DetalleCotizacionDataGridView);
             this.Controls.Add(this.ImporteTextBox);
             this.Controls.Add(this.PrecioTextBox);
-            this.Controls.Add(this.CantidadCotizadaTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -336,6 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CotizacionIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleCotizacionDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadCotizadaNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,7 +362,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox CantidadCotizadaTextBox;
         private System.Windows.Forms.TextBox PrecioTextBox;
         private System.Windows.Forms.TextBox ImporteTextBox;
         private System.Windows.Forms.DataGridView DetalleCotizacionDataGridView;
@@ -369,5 +373,6 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Button RemoverButton;
+        private System.Windows.Forms.NumericUpDown CantidadCotizadaNumericUpDown;
     }
 }

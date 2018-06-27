@@ -158,6 +158,7 @@ namespace RegistroDetalle.BLL
                     {
                         //forzando la Descripcion a cargarse
                         string s = item.Articulos.Descripcion;
+                        string ss = item.Personas.Nombres;
                     }
                 }
                 contexto.Dispose();//Siempre hay que cerrar la conexión.
@@ -190,9 +191,13 @@ namespace RegistroDetalle.BLL
             return cotizaciones;
         }
 
-        public static float CalcularPrecio(float a, float b)
+        public static float Importe(float cantidad, float precio)
         {
-            return a * b;
+            float CalImporte = 0;
+
+            CalImporte = cantidad * precio;
+
+            return CalImporte;
         }
     }
 }
