@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using RegistroDetalle.UI.Registros;
+using RegistroDetalle.UI.Consultas;
 
 namespace RegistroDetalle
 {
@@ -18,14 +20,14 @@ namespace RegistroDetalle
 
         private void registrarArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroDetalle.UI.Registros.RegistrarArticulos registrarArticulos = new UI.Registros.RegistrarArticulos();
+            RegistrarArticulos registrarArticulos = new RegistrarArticulos();
             registrarArticulos.MdiParent = this;
             registrarArticulos.Show();
         }
 
         private void registrarPersonasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroDetalle.UI.Registros.RegistrarPersonas registrarPersonas = new UI.Registros.RegistrarPersonas();
+            RegistrarPersonas registrarPersonas = new RegistrarPersonas();
             registrarPersonas.MdiParent = this;
             registrarPersonas.Show();
         }
@@ -37,7 +39,7 @@ namespace RegistroDetalle
 
         private void registrarCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroDetalle.UI.Registros.RegistrarCotizacion registrarCotizacion = new UI.Registros.RegistrarCotizacion();
+            RegistrarCotizacion registrarCotizacion = new RegistrarCotizacion();
             registrarCotizacion.MdiParent = this;
             registrarCotizacion.Show();
         }
@@ -65,6 +67,20 @@ namespace RegistroDetalle
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void consultarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarArticulos consultarArticulos = new ConsultarArticulos();
+            consultarArticulos.MdiParent = this;
+            consultarArticulos.Show();
+        }
+
+        private void consultarPersonaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultar_Persona consultar_Persona = new Consultar_Persona();
+            consultar_Persona.MdiParent = this;
+            consultar_Persona.Show();
         }
     }
 }

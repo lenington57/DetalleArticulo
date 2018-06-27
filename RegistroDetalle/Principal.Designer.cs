@@ -43,6 +43,8 @@
             this.ArticulosToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.CotizacionesToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.consultarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarPersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.RegistrarToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -80,26 +82,29 @@
             // registrarArticulosToolStripMenuItem
             // 
             this.registrarArticulosToolStripMenuItem.Name = "registrarArticulosToolStripMenuItem";
-            this.registrarArticulosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.registrarArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarArticulosToolStripMenuItem.Text = "Registrar Articulos";
             this.registrarArticulosToolStripMenuItem.Click += new System.EventHandler(this.registrarArticulosToolStripMenuItem_Click);
             // 
             // registrarPersonasToolStripMenuItem
             // 
             this.registrarPersonasToolStripMenuItem.Name = "registrarPersonasToolStripMenuItem";
-            this.registrarPersonasToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.registrarPersonasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarPersonasToolStripMenuItem.Text = "Registrar Personas";
             this.registrarPersonasToolStripMenuItem.Click += new System.EventHandler(this.registrarPersonasToolStripMenuItem_Click);
             // 
             // registrarCotizacionToolStripMenuItem
             // 
             this.registrarCotizacionToolStripMenuItem.Name = "registrarCotizacionToolStripMenuItem";
-            this.registrarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.registrarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarCotizacionToolStripMenuItem.Text = "Registrar Cotizacion";
             this.registrarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.registrarCotizacionToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultarArticuloToolStripMenuItem,
+            this.consultarPersonaToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -175,6 +180,20 @@
             this.CotizacionesToolStripButton.Text = "Registrar Cotizaciones";
             this.CotizacionesToolStripButton.Click += new System.EventHandler(this.CotizacionesToolStripButton_Click);
             // 
+            // consultarArticuloToolStripMenuItem
+            // 
+            this.consultarArticuloToolStripMenuItem.Name = "consultarArticuloToolStripMenuItem";
+            this.consultarArticuloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarArticuloToolStripMenuItem.Text = "Consultar Articulo";
+            this.consultarArticuloToolStripMenuItem.Click += new System.EventHandler(this.consultarArticuloToolStripMenuItem_Click);
+            // 
+            // consultarPersonaToolStripMenuItem
+            // 
+            this.consultarPersonaToolStripMenuItem.Name = "consultarPersonaToolStripMenuItem";
+            this.consultarPersonaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarPersonaToolStripMenuItem.Text = "Consultar Persona";
+            this.consultarPersonaToolStripMenuItem.Click += new System.EventHandler(this.consultarPersonaToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +232,8 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripMenuItem consultarArticuloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarPersonaToolStripMenuItem;
     }
 }
 
