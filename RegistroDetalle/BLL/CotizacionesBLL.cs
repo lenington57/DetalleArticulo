@@ -31,7 +31,7 @@ namespace RegistroDetalle.BLL
                 {
                     foreach (var item in cotizaciones.Detalle)
                     {
-                        contexto.Articulos.Find(item.ArticulosId).Existencia -= item.CantidadCotizada;
+                        contexto.Articulos.Find(item.ArticulosId).CantCotizada -= item.CantidadCotizada;
                     }
                     contexto.SaveChanges();//Guardar los cambios.
                     paso = true;
@@ -62,12 +62,12 @@ namespace RegistroDetalle.BLL
                 foreach (var item in CantCotAnt.Detalle)//recorrer el detalle anterior
                 {
                     //restar todas las cantidades cotizadas
-                    contexto.Articulos.Find(item.ArticulosId).Existencia -= item.CantidadCotizada;
+                    contexto.Articulos.Find(item.ArticulosId).CantCotizada -= item.CantidadCotizada;
 
                     //determinar si el item no esta en el detalle actual
                     if (!cotizaciones.Detalle.ToList().Exists(v => v.Id == item.Id))
                     {
-                        contexto.Articulos.Find(item.ArticulosId).Existencia -= item.CantidadCotizada;
+                        contexto.Articulos.Find(item.ArticulosId).CantCotizada -= item.CantidadCotizada;
                         item.Articulos = null; //quitar la cantidad para que EF no intente hacerle nada
                         contexto.Entry(item).State = EntityState.Deleted;
                     }
@@ -77,7 +77,7 @@ namespace RegistroDetalle.BLL
                 foreach (var item in cotizaciones.Detalle)
                 {
                     //Sumar todas las cantidades cotizadas
-                    contexto.Articulos.Find(item.ArticulosId).Existencia += item.CantidadCotizada;
+                    contexto.Articulos.Find(item.ArticulosId).CantCotizada += item.CantidadCotizada;
 
                     //Muy importante indicar que pasara con la entidad del detalle
                     var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;

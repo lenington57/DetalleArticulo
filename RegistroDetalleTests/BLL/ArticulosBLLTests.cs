@@ -56,9 +56,9 @@ namespace RegistroDetalle.BLL.Tests
         public void BuscarTest()
         {
             int id = 2;
-            Personas personas = new Personas();
-            personas = PersonasBLL.Buscar(id);
-            Assert.IsNotNull(personas);
+            Articulos articulos = new Articulos();
+            articulos = ArticulosBLL.Buscar(id);
+            Assert.IsNotNull(articulos);
         }
 
         [TestMethod()]
